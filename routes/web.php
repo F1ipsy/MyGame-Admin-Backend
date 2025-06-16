@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AudioStreamController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\QuestionController;
@@ -75,3 +76,8 @@ Route::get("/game/{game}/edit", [GameController::class, "edit"])->name("game.edi
 // Стили
 Route::post("/styles", [StyleController::class, "store"])->name("style.store");
 Route::delete("/styles/{style}", [StyleController::class, "destroy"])->name("style.delete");
+
+// Отдаём музыку
+Route::get('/audio/{filename}', [AudioStreamController::class, 'index'])
+    ->where('filename', '.*');;
+

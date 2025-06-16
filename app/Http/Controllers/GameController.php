@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class GameController extends Controller
 {
@@ -16,9 +17,17 @@ class GameController extends Controller
 
     public function changeGameStatus(Game $game): void
     {
-        $otherGames = Game::query()->where("status", 1)->get();
-        $otherGames->each(fn(Game $game) => $game->update(["status" => 0]));
-        $game->update(["status" => 1]);
+        $otherGames = Game::query()->where("status", 1)->first();
+        if ($otherGames) {
+            if ($otherGames->id === $game->id) {
+                return;
+            } else {
+                $otherGames->update(["status" => 0]);
+                $game->update(["status" => 1]);
+            }
+        } else {
+            $game->update(["status" => 1]);
+        }
     }
 
     public function getAllGame()

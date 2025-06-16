@@ -16,25 +16,25 @@
                 <form action="{{ route('addQuestion') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-y-3">
                     @csrf
                     @method("POST")
-                    <textarea class='w-full min-h-[46px] h-24 border-2 p-2 rounded-lg' type="text" name="desc" placeholder="Описание вопроса"></textarea>
-                    <textarea class='w-full min-h-[46px] h-[46px] border-2 p-2 rounded-lg' type="text" name="question" placeholder="Вопрос"></textarea>
-                    <select class='w-full border-2 p-2 rounded-lg' name="question_type">
+                    <textarea class='w-full min-h-[46px] h-24 border p-2 rounded-lg' type="text" name="desc" placeholder="Описание вопроса"></textarea>
+                    <textarea class='w-full min-h-[46px] h-[46px] border p-2 rounded-lg' type="text" name="question" placeholder="Вопрос"></textarea>
+                    <select class='w-full border p-2 rounded-lg' name="question_type">
                         <option value="text" selected>Выберите тип вопроса</option>
                         <option value="img">Изображение</option>
                         <option value="video">Видео</option>
                         <option value="music">Звук</option>
                     </select>
-                    <input type="file" name="question_file">
-                    <textarea class='w-full min-h-[46px] h-[46px] border-2 p-2 rounded-lg' type="text" name="answer" placeholder="Ответ"></textarea>
-                    <textarea class='w-full min-h-[46px] h-24 border-2 p-2 rounded-lg' type="text" name="answer_desc" placeholder="Описание ответа"></textarea>
-                    <select class='w-full border-2 p-2 rounded-lg' name="answer_type">
+                    <input type="file" name="question_file" class="border p-2 rounded-lg">
+                    <textarea class='w-full min-h-[46px] h-[46px] border p-2 rounded-lg' type="text" name="answer" placeholder="Ответ"></textarea>
+                    <textarea class='w-full min-h-[46px] h-24 border p-2 rounded-lg' type="text" name="answer_desc" placeholder="Описание ответа"></textarea>
+                    <select class='w-full border p-2 rounded-lg' name="answer_type">
                         <option value="text" selected>Выберите тип ответа</option>
                         <option value="img">Изображение</option>
                         <option value="video">Видео</option>
                         <option value="music">Звук</option>
                     </select>
-                    <input type="file" name="answer_file">
-                    <select class='w-full border-2 p-2 rounded-lg' name="points">
+                    <input type="file" name="answer_file" class="border p-2 rounded-lg">
+                    <select class='w-full border p-2 rounded-lg' name="points">
                         <option value="#" disabled selected>Очки</option>
                         <option value="100">100</option>
                         <option value="200">200</option>
@@ -42,7 +42,7 @@
                         <option value="400">400</option>
                         <option value="500">500</option>
                     </select>
-                    <input class='w-full border-2 p-2 rounded-lg' type="hidden" name="category_id" value="{{ $category->id }}">
+                    <input class='w-full p-2 rounded-lg' type="hidden" name="category_id" value="{{ $category->id }}">
                     <button class='w-full bg-green-300 p-2 rounded-lg' type="submit">Создать</button>
                     @if ($errors->any())
                     <div class="text-red-500 text-lg">

@@ -1,0 +1,338 @@
+/* ВЕРХНЯЯ ПЛАШКА ОТОБРАЖАЕМАЯ НА УСТРОЙСТВЕ ИГРОКА */
+
+.header_container {
+	width: 100%;
+    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+    background: url("../../musicians_style/background_musicians.svg");
+}
+
+.header_bg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    padding-top: 0.75rem; /* py-3 */
+    padding-bottom: 0.75rem; /* py-3 */
+}
+
+.header_bg::after {}
+
+.header_bg::before {}
+
+.header_title {
+    color: #C94780;
+	font-size: 2.25rem; /* text-4xl */
+	font-weight: 800; /* font-bold */
+    line-height: 2.5rem;
+    display: flex;
+    align-items: center; /* flex items-center */
+	text-align: center; /* text-center */
+    margin-top: 2rem;
+}
+
+.header_logo {
+    width: 16rem;
+    height: 6rem;
+    background: url("../../musicians_style/logo_musicians.svg") center no-repeat;
+    background-size: contain;
+}
+
+.circles_1 {}
+
+.circles_1::after {}
+
+.circles_2 {}
+
+/* ПАНЕЛЬ ПОЛЬЗОВАТЕЛЯ С ТЕКУЩИМ ВОПРОСОМ И КНОПКОЙ "ОТВЕТИТЬ" */
+
+.user_panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* gap-y-3 */
+    align-items: center;
+	border-radius: 0.5rem; /* rounded-lg */
+	padding: 1rem; /* p-4 */
+}
+
+.username_points_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 0 6px 2px rgba(252, 246, 72, 0.5);
+    border: solid 1px rgba(252, 246, 72, 0.5);
+    border-radius: 10px;
+    background: rgba(48, 14, 29, 0.7);
+}
+
+.team_icon {
+    color: white;
+    fill: currentColor;
+}
+
+.username {
+	color: #C94780;
+	text-align: center; /* text-center */
+	font-size: 1.25rem; /* text-xl */
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.user_points {
+	color: white;
+	text-align: center; /* text-center */
+	font-size: 1rem; /* text-xl */
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.user_question_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 6px 2px rgba(252, 246, 72, 0.5);
+    border: solid 1px rgba(252, 246, 72, 0.5);
+    background: linear-gradient(rgba(48, 14, 29, 0.7), rgba(201, 71, 128, 0.7));
+    border-radius: 10px;
+}
+
+.user_question_cost {
+	color: #FCF648;
+	font-weight: 800; /* font-bold */
+	font-size: 1.25rem; /* text-xl */
+	text-align: center; /* text-center */
+    text-transform: uppercase;
+	white-space: normal; /* text-wrap */
+}
+
+.show_question_desc {
+    color: #C94780; /* text-[#007953] */
+    text-decoration: underline; /* underline */
+    text-align: center; /* text-center */
+    font-size: 1.25rem; /* text-xl (1.25rem) */
+}
+
+@media (min-width: 1536px) { /* 2xl:hidden */
+    .show_question_desc {
+        display: none;
+    }
+}
+
+.user_question_desc {
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.user_selected_question {
+	color: white;
+	font-size: 1.25rem; /* text-xl */
+	font-weight: 700; /* font-bold */
+	text-align: center; /* text-center */
+	white-space: normal; /* text-wrap */
+}
+
+.answer_button {
+    color: white;
+	width: 100%; /* w-40 */
+	margin-top: 0.25rem; /* mt-2 */
+    padding: 1rem;
+	border-radius: 10px; /* rounded-full */
+	font-size: 1.5rem; /* text-2xl */
+    font-weight: 800;
+    text-transform: uppercase;
+	background-color: rgba(48, 14, 29, 0.7); /* bg-green-300 */
+    border: 2px dashed #FCF648;
+    box-shadow: 0 0 6px 2px rgba(252, 246, 72, 0.5);
+}
+
+.user_response_order {
+    color: white;
+    width: 100%;
+    margin-top: 0.25rem; /* mt-2 */
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(48, 14, 29, 0.7);
+    border: 2px dashed #FCF648;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px rgba(252, 246, 72, 0.5);
+}
+
+.question_skipped {
+    color: white;
+    width: 100%;
+    margin-top: 0.25rem; /* mt-2 */
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(48, 14, 29, 0.7);
+    border: 2px dashed #FCF648;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px rgba(252, 246, 72, 0.5);
+}
+
+/* ПАНЕЛЬ ВЕДУЩЕГО С ВЫБОРОМ КАТЕГОРИИ И СТОИМОСТИ ВОПРОСА */
+
+.logo {
+    position: relative;
+    justify-self: center;
+    width: 16rem;
+    height: 100%;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 150%;
+    background: url("../../musicians_style/logo_musicians.svg") no-repeat;
+    background-size: contain;
+}
+
+.game_title {
+    color: white;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.table_button {
+    color: white;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.host_background {
+	background: url("../../musicians_style/background_musicians.svg");
+    background-size: cover; /* bg-cover */
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.grid_wrapper {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	flex-grow: 0.8;
+    background: linear-gradient(#230A15, #892752, #230A15);
+    box-shadow: 0 0 15px 7px rgba(252, 246, 72, 0.5);
+    border-radius: 45px;
+    margin: 0 100px;
+}
+
+.question_button {
+    position: relative;
+	display: grid;
+	place-content: center;
+    color: white;
+	cursor: pointer;
+    height: 100%;
+}
+
+.question_button::before {
+    content: "";
+    position: absolute;
+    top: 36%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: url("../../musicians_style/note.svg") no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 40;
+}
+
+.categories,
+.buttons_grid {
+	padding: 40px;
+	gap: 40px;
+}
+
+.buttons_grid {
+	display: grid;
+    align-items: center;
+	position: relative;
+}
+
+.buttons_row {
+    height: 12vh;
+    background: url("../../musicians_style/row_musicians.png") center no-repeat;
+    background-size: contain;
+	display: grid;
+	align-items: center;
+	grid-auto-columns: 1fr; /* auto-cols-fr */
+	grid-auto-flow: column; /* grid-flow-col */
+	gap: 40px;
+}
+
+.categories {
+	display: grid;
+	grid-auto-rows: 1fr; /* auto-rows-fr */
+	align-items: center;
+}
+
+.category {
+    height: 12vh;
+    color: white;
+    background: #300E1D;
+    border-radius: 8px;
+    border: 6px dotted #FCF648;
+    display: grid;
+    align-items: center;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* ПАНЕЛЬ ВЕДУЩЕГО, ЭКРАН С ВЫБРАННЫМ ВОПРОСОМ */
+
+.host_selected_question_container {
+	background: white;
+	width: 60%; /* w-[60%] */
+	max-width: 1200px; /* 2xl:w-[1200px] */
+	max-height: 920px; /* max-h-[920px] */
+	height: max-content; /* h-max */
+	display: flex;
+	flex-direction: column;
+	padding: 1rem; /* p-4 */
+	gap: 1.5rem; /* gap-y-6 */
+	border-radius: 0.5rem; /* rounded-lg */
+}
+
+.host_question_cost {
+	color: black;
+	text-align: center; /* text-center */
+	font-size: 1.5rem; /* text-2xl */
+	font-weight: 700; /* font-bold */
+}
+
+.host_selected_question {
+	color: black;
+	text-align: center; /* text-center */
+	font-size: 1.5rem; /* text-2xl */
+	font-weight: 700; /* font-bold */
+}

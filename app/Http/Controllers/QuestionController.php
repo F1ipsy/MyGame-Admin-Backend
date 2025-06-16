@@ -46,13 +46,13 @@ class QuestionController extends Controller
         $question->points = $request->points;
 
         if ($request->file('question_file')) {
-            $path_question = $request->file('question_file')->store('public/file');
-            $question->question_file = 'storage/' . str_replace('public/', '', $path_question);
+            $path_question = $request->file('question_file')->store('file');
+            $question->question_file = 'storage/' . $path_question;
         }
 
         if ($request->file('answer_file')) {
-            $path_answer = $request->file('answer_file')->store('public/file');
-            $question->answer_file = 'storage/' . str_replace('public/', '', $path_answer);
+            $path_answer = $request->file('answer_file')->store('file');
+            $question->answer_file = 'storage/' . $path_answer;
         }
 
         $question->desc = $request->desc;
@@ -90,13 +90,13 @@ class QuestionController extends Controller
         $question->fill($validated);
 
         if ($request->file('question_file')) {
-            $path_question = $request->file('question_file')->store('public/file');
-            $question->question_file = 'storage/' . str_replace('public/', '', $path_question);
+            $path_question = $request->file('question_file')->store('file');
+            $question->question_file = 'storage/' . $path_question;
         }
 
         if ($request->file('answer_file')) {
-            $path_answer = $request->file('answer_file')->store('public/file');
-            $question->answer_file = 'storage/' . str_replace('public/', '', $path_answer);
+            $path_answer = $request->file('answer_file')->store('file');
+            $question->answer_file = 'storage/' . $path_answer;
         }
 
         // Сохраняем модель

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AudioStreamController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\StyleController;
 use Illuminate\Http\Request;
