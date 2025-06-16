@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     @vite('resources/css/app.css')
+    <!-- Scripts -->
+    <link rel="stylesheet" href="{{asset('build/assets/app-DkzVpH8h.css')}}">
+    <script src="{{asset("build/assets/app-eMHK6VFw.js")}}"></script>
 </head>
 
 <body>
